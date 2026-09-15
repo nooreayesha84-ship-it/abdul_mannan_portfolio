@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    // Set the theme attribute before first paint to avoid a flash of the wrong theme.
+    // Default is Light Mode; only switches to Dark if the user previously chose it.
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', stored === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul Mannan | Full-Stack Developer &amp; Technical Architect</title>
+  <meta name="description" content="Abdul Mannan — Full-Stack Developer & Technical Architect. Top 2% Freelancer building scalable web, SaaS, and AI-powered systems.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="brand" data-link>
+        <span class="brand-mark">AM</span>
+        <span class="brand-name">Abdul Mannan</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active" data-link>Home</a></li>
+          <li><a href="#about" class="nav-link" data-link>About</a></li>
+          <li><a href="#expertise" class="nav-link" data-link>Expertise</a></li>
+          <li><a href="#projects" class="nav-link" data-link>Projects</a></li>
+          <li><a href="#journey" class="nav-link" data-link>Journey</a></li>
+          <li><button type="button" class="nav-link nav-link-btn" id="reviewsBtn" aria-haspopup="dialog" aria-controls="reviewsModal">Reviews</button></li>
+          <li><a href="#contact" class="nav-link" data-link>Contact</a></li>
+        </ul>
+        <span class="nav-indicator" id="navIndicator"></span>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12h2.5M19 12h2.5M4.2 19.8L6 18M18 6l1.8-1.8"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M20.8 13.4A8.5 8.5 0 1110.6 3.2a7 7 0 0010.2 10.2z"/>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary nav-cta" data-link>Let's Connect</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="grid-overlay"></div>
+      <div class="hero-glow"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-text hero-enter">
+        <p class="eyebrow">Top 2% Verified Freelancer · 5.0★ (149 Reviews)</p>
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent-text">Abdul Mannan</span>
+        </h1>
+        <p class="hero-role">Full-Stack Developer &amp; Technical Architect</p>
+        <p class="hero-desc">
+          I design and build scalable web, mobile, SaaS, and AI-powered systems —
+          turning ambitious product ideas into reliable, production-ready
+          architecture. 8+ years of experience, business-driven results.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" data-link>View Projects</a>
+          <a href="#contact" class="btn btn-outline" data-link>Let's Connect</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-chip"><strong>5.0★</strong><span>149 Reviews</span></div>
+          <div class="stat-chip"><strong>8+</strong><span>Years Experience</span></div>
+          <div class="stat-chip"><strong>98%</strong><span>On-Time Delivery</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual hero-enter-visual">
+        <div class="orbit-widget" aria-hidden="true">
+          <div class="orbit-path orbit-path-inner"></div>
+          <div class="orbit-path orbit-path-outer"></div>
+
+          <div class="orbit-profile">
+            <span class="orbit-profile-first">Abdul</span>
+            <span class="orbit-profile-last">Mannan</span>
+          </div>
+
+          <div class="orbit-ring orbit-ring-inner">
+            <div class="orbit-slot" style="--angle: 0deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="JavaScript"><span>JS</span></div>
+              </div>
+            </div>
+            <div class="orbit-slot" style="--angle: 120deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="React"><span>React</span></div>
+              </div>
+            </div>
+            <div class="orbit-slot" style="--angle: 240deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="Node.js"><span>Node</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="orbit-ring orbit-ring-outer">
+            <div class="orbit-slot" style="--angle: 0deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="Python"><span>Python</span></div>
+              </div>
+            </div>
+            <div class="orbit-slot" style="--angle: 72deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="Django"><span>Django</span></div>
+              </div>
+            </div>
+            <div class="orbit-slot" style="--angle: 144deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="PostgreSQL"><span>Postgres</span></div>
+              </div>
+            </div>
+            <div class="orbit-slot" style="--angle: 216deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="Docker"><span>Docker</span></div>
+              </div>
+            </div>
+            <div class="orbit-slot" style="--angle: 288deg;">
+              <div class="orbit-badge">
+                <div class="badge-circle" data-name="AWS"><span>AWS</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Tech Stack ===== -->
+  <div class="tech-strip">
+    <div class="section-inner">
+      <h2 class="section-title center">Skills</h2>
+      <div class="tech-strip-inner">
+      <span class="tech-pill">Python</span><span class="tech-pill">JavaScript</span>
+      <span class="tech-pill">Django</span><span class="tech-pill">FastAPI</span>
+      <span class="tech-pill">Node.js</span><span class="tech-pill">React</span>
+      <span class="tech-pill">Next.js</span><span class="tech-pill">Vue</span>
+      <span class="tech-pill">Angular</span><span class="tech-pill">Flutter</span>
+      <span class="tech-pill">PostgreSQL</span><span class="tech-pill">MongoDB</span>
+      <span class="tech-pill">Docker</span><span class="tech-pill">Kubernetes</span>
+      <span class="tech-pill">AWS</span><span class="tech-pill">GCP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section">
+    <div class="section-inner about-grid">
+      <div class="reveal">
+        <p class="tag-label">About Me</p>
+        <h2 class="section-title">Building scalable systems with business-driven results</h2>
+        <p class="about-text">
+          I'm Abdul Mannan, a Full-Stack Developer and Technical Architect based in
+          Pakistan, recognized as a <strong>Top 2% Verified Freelancer</strong> with a
+          <strong>Preferred Freelancer</strong> designation. Over 8+ years, I've built
+          web and mobile applications, SaaS &amp; CRM platforms, AI-powered tools, and
+          automation systems — with a focus on clean architecture that scales with
+          the business, not just the codebase.
+        </p>
+        <p class="about-text">
+          My work spans full-stack architecture, REST/GraphQL APIs, e-commerce
+          solutions, chatbot development, workflow automation, and web scraping —
+          consistently delivered with a 5.0/5.0 client rating across 149 reviews.
+        </p>
+      </div>
+
+      <div class="facts-card reveal">
+        <ul class="facts-list">
+          <li>
+            <div class="fact-main">
+              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+              <span>Location</span>
+            </div>
+            <strong>Pakistan</strong>
+          </li>
+          <li>
+            <div class="fact-main">
+              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+              <span>Experience</span>
+            </div>
+            <strong>8+ Years</strong>
+          </li>
+          <li>
+            <div class="fact-main">
+              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg></span>
+              <span>Focus</span>
+            </div>
+            <strong>SaaS · AI · Automation</strong>
+          </li>
+          <li>
+            <div class="fact-main">
+              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3 5 1.1 5 3-2.2 3-5 3-5-1.1-5-3"/></svg></span>
+              <span>Rate</span>
+            </div>
+            <strong>From $50 USD/hr</strong>
+          </li>
+          <li>
+            <div class="fact-main">
+              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2.5l7.5 3.2v5.6c0 5-3.2 8.4-7.5 10.2-4.3-1.8-7.5-5.2-7.5-10.2V5.7L12 2.5z"/><path d="M9 12l2 2 4-4.5"/></svg></span>
+              <span>Status</span>
+            </div>
+            <strong>Top 2% · Preferred Freelancer</strong>
+          </li>
+          <li>
+            <div class="fact-main">
+              <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.1 5.9-.9L12 3.5z"/></svg></span>
+              <span>Client Rating</span>
+            </div>
+            <strong>5.0 / 5.0 (149 reviews)</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Expertise ===== -->
+  <section id="expertise" class="section alt-bg">
+    <div class="section-inner">
+      <p class="tag-label center reveal">Expertise</p>
+      <h2 class="section-title center reveal">Services &amp; Technical Focus</h2>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg>
+          </div>
+          <h3>Full-Stack Web &amp; Mobile</h3>
+          <p>End-to-end web and mobile application development with React, Next.js, Vue, Angular, and Flutter on the front end.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="5" rx="1.5"/><rect x="3" y="11" width="18" height="5" rx="1.5"/><rect x="3" y="18" width="10" height="2.5" rx="1"/></svg>
+          </div>
+          <h3>SaaS &amp; CRM Platforms</h3>
+          <p>Multi-tenant SaaS and CRM systems with role-based portals, billing integrations, and compliance-ready workflows.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M4.5 19.5l2-2M17.5 6.5l2-2"/></svg>
+          </div>
+          <h3>AI Solutions &amp; Automation</h3>
+          <p>AI-powered applications, chatbot development, and workflow automation using N8N, Zapier, and Zoho integrations.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 17a4 4 0 010-8 5 5 0 019.6-1.5A4.5 4.5 0 0118 17H6z"/></svg>
+          </div>
+          <h3>Cloud &amp; DevOps</h3>
+          <p>Containerized, cloud-native deployments with Docker, Kubernetes, AWS, and GCP built for reliability at scale.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/></svg>
+          </div>
+          <h3>API Development</h3>
+          <p>Robust REST &amp; GraphQL APIs and backend architecture with Django, FastAPI, Node.js, NestJS, and ASP.NET Core.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 0114.3-5M20 12a8 8 0 01-14.3 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+          </div>
+          <h3>Workflow &amp; Web Scraping</h3>
+          <p>Custom automation pipelines, data scraping, and platform integrations that remove manual, repetitive work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <p class="tag-label center reveal">Featured Work</p>
+      <h2 class="section-title center reveal">Projects</h2>
+      <p class="section-sub center reveal">A look at real, client-delivered platforms — from concept to production.</p>
+
+      <div class="filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="saas">SaaS</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <article class="project-card featured reveal" data-category="saas web">
+          <div class="project-visual">
+            <div class="mockup-bar">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+              <span class="mockup-label">01 · Event Platform</span>
+            </div>
+            <div class="project-thumb">
+              <div class="thumb-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="12" cy="12" r="9" stroke-dasharray="2 3"/>
+                  <path d="M12 6.5a4 4 0 00-4 4c0 3 4 7 4 7s4-4 4-7a4 4 0 00-4-4z"/>
+                  <circle cx="12" cy="10.5" r="1.4" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <div class="thumb-overlay">
+                <span>View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag tag-featured">Featured</span><span class="tag">SaaS</span><span class="tag">Web App</span>
+            </div>
+            <h3>Hyperlocal Event Discovery Platform</h3>
+            <p>
+              A full-stack platform for the Reno&ndash;Truckee region that lets locals
+              discover nearby events via geolocation, organizers self-publish listings,
+              and businesses sponsor placements. Features auto-location detection,
+              1&ndash;60 mile radius filtering, Stripe-powered paid promotion, and
+              geo-targeted weekly newsletters.
+            </p>
+            <div class="project-stack">
+              <span>Geolocation</span><span>Stripe</span><span>Newsletters</span>
+            </div>
+            <a href="https://www.freelancer.com/u/mannanmaan1425/portfolio/hyperlocal-event-discovery-platform-14034253" class="project-link" target="_blank" rel="noopener">
+              View Case Study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="saas ai">
+          <div class="project-visual">
+            <div class="mockup-bar">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+              <span class="mockup-label">02 · TheSafeReport</span>
+            </div>
+            <div class="project-thumb">
+              <div class="thumb-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M12 3l7 2.8v5.4c0 4.6-3 7.9-7 9.3-4-1.4-7-4.7-7-9.3V5.8L12 3z"/>
+                  <path d="M12 8.5v4.2M12 15.6h.01"/>
+                </svg>
+              </div>
+              <div class="thumb-overlay">
+                <span>View on Freelancer
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">SaaS / CRM</span><span class="tag">AI</span>
+            </div>
+            <h3>TheSafeReport | Emergency Incident Management</h3>
+            <p>
+              A complete incident lifecycle management system built for public-safety
+              organizations. Supports anonymous and authenticated reporting, AI-powered
+              triage with auto-escalation, a three-portal architecture for reporters,
+              organizations, and administrators, evidence tracking, compliance exports,
+              and real-time emergency dispatch integration.
+            </p>
+            <div class="project-stack">
+              <span>AI Triage</span><span>Multi-Portal</span><span>Compliance</span>
+            </div>
+            <a href="https://www.freelancer.com/u/mannanmaan1425" class="project-link" target="_blank" rel="noopener">
+              View on Freelancer
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+      <p class="empty-msg" id="emptyMsg" hidden>No projects in this category yet.</p>
+    </div>
+  </section>
+
+  <!-- ===== Journey ===== -->
+  <section id="journey" class="section alt-bg">
+    <div class="section-inner">
+      <p class="tag-label center reveal">Journey</p>
+      <h2 class="section-title center reveal">Freelance Journey</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 21V4M6 5h12l-3 3.5L18 12H6"/></svg></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Oct 2020</span>
+            <h3>Joined Freelancer.com</h3>
+            <p>Started delivering full-stack web, mobile, SaaS, and automation projects for clients worldwide.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 8l-5 4 5 4M15 8l5 4-5 4M13 4l-2 16"/></svg></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Ongoing</span>
+            <h3>8+ Years of Engineering Experience</h3>
+            <p>Grew a technical practice spanning full-stack architecture, REST/GraphQL APIs, SaaS platforms, and AI-driven systems.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.5l7.5 3.2v5.6c0 5-3.2 8.4-7.5 10.2-4.3-1.8-7.5-5.2-7.5-10.2V5.7L12 2.5z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Milestone</span>
+            <h3>Top 2% Verified &amp; Preferred Freelancer</h3>
+            <p>Earned Freelancer.com's Preferred Freelancer designation and Top 2% verified status, with 10 client recommendations.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.1 5.9-.9L12 3.5z"/></svg></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Today</span>
+            <h3>149 Five-Star Reviews</h3>
+            <p>Maintaining a 5.0/5.0 client rating with 98% on-time and 98% on-budget project delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Achievements ===== -->
+  <section id="achievements" class="section stats-section">
+    <div class="section-inner">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count="5" data-decimal="1">0</span>
+          <span class="stat-suffix">/5.0</span>
+          <p>Client Rating</p>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count="149">0</span>
+          <p>Five-Star Reviews</p>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count="8">0</span>
+          <span class="stat-suffix">+</span>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count="98">0</span>
+          <span class="stat-suffix">%</span>
+          <p>On-Time Delivery</p>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count="98">0</span>
+          <span class="stat-suffix">%</span>
+          <p>On-Budget Completion</p>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count="2">0</span>
+          <span class="stat-suffix">%</span>
+          <p>Top Freelancers (Verified)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section alt-bg">
+    <div class="section-inner contact-grid">
+      <div class="reveal">
+        <p class="tag-label">Contact</p>
+        <h2 class="section-title">Let's Build Something Great Together</h2>
+        <p class="about-text">
+          Have a project in mind, or need a technical partner for your next SaaS
+          or AI product? I'm currently available for new engagements.
+        </p>
+        <a href="https://www.freelancer.com/u/mannanmaan1425" class="btn btn-primary" target="_blank" rel="noopener">
+          Hire Me on Freelancer
+        </a>
+      </div>
+
+      <div class="contact-cards reveal">
+        <a href="mailto:abdulmannan@example.com" class="contact-card">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg></span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">abdulmannan@example.com</span>
+        </a>
+        <a href="https://www.freelancer.com/u/mannanmaan1425" class="contact-card" target="_blank" rel="noopener">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5.5A1.5 1.5 0 019.5 4h5A1.5 1.5 0 0116 5.5V7M3 12h18"/></svg></span>
+          <span class="contact-label">Freelancer Profile</span>
+          <span class="contact-value">@mannanmaan1425</span>
+        </a>
+        <div class="contact-card">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Pakistan</span>
+        </div>
+        <div class="contact-card">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3 5 1.1 5 3-2.2 3-5 3-5-1.1-5-3"/></svg></span>
+          <span class="contact-label">Rate</span>
+          <span class="contact-value">From $50 USD/hr</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="section-inner footer-grid">
+      <div>
+        <a href="#home" class="brand" data-link>
+          <span class="brand-mark">AM</span>
+          <span class="brand-name">Abdul Mannan</span>
+        </a>
+        <p class="footer-tagline">Full-Stack Developer &amp; Technical Architect building scalable SaaS &amp; AI systems.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home" data-link>Home</a>
+        <a href="#about" data-link>About</a>
+        <a href="#expertise" data-link>Expertise</a>
+        <a href="#projects" data-link>Projects</a>
+        <a href="#contact" data-link>Contact</a>
+      </div>
+
+      <div class="footer-profile">
+        <a href="https://www.freelancer.com/u/mannanmaan1425" target="_blank" rel="noopener">Freelancer.com Profile &rarr;</a>
+        <p class="footer-copy">&copy; 2026 Abdul Mannan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+  <!-- ===== Reviews Modal ===== -->
+  <div class="reviews-overlay" id="reviewsModal" role="dialog" aria-modal="true" aria-labelledby="reviewsTitle" hidden>
+    <div class="reviews-panel">
+      <div class="reviews-head">
+        <div>
+          <h2 id="reviewsTitle">Client Reviews</h2>
+          <p class="reviews-sub">5.0 · 149 Reviews on Freelancer.com</p>
+        </div>
+        <button type="button" class="reviews-close" id="reviewsClose" aria-label="Close reviews">&times;</button>
+      </div>
+
+      <div class="reviews-track-wrap">
+        <div class="reviews-track" id="reviewsTrack">
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-project">FEMA IPAWS CAP XML Integration</p>
+            <p class="review-text">"Abdul did an excellent job on our FEMA IPAWS integration. This was a technically challenging project involving CAP 1.2, digital signatures, WS-Security, X.509 certificates, SOAP/TLS and live FEMA Demo/Staging testing. He stayed with difficult technical issues through successful transmissions and provided complete source code, documentation, evidence and a detailed handoff. I appreciate his persistence, technical ability and continued support. Highly recommended."</p>
+            <div class="review-stack">
+              <span>PHP</span><span>XML</span><span>Software Architecture</span><span>XSLT</span>
+            </div>
+            <p class="review-author">Shawn <span>· Freelancer.com Client</span></p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-project">Business Account Integration &amp; Workflow Automation (AI Parser, Zoho Books, Zapier, Make.com)</p>
+            <p class="review-text">"Abdul is one of a kind and makes it happen along with his team.. They are great!! Abdul is the man! His team works smart, hard, and fast. Looking forward to the end result and to move on to the next project!!"</p>
+            <div class="review-stack">
+              <span>PHP</span><span>Software Architecture</span><span>AI (Artificial Intelligence)</span><span>Automation</span>
+            </div>
+            <p class="review-author">Kenneth <span>· Freelancer.com Client</span></p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-project">Next.js 15 + Shadcn UI Developer for High-Density FinTech/PropTech Dashboard</p>
+            <p class="review-text">"Excellent performance and very fast implementation of the interactive filters. High-quality dashboard interface."</p>
+            <div class="review-stack">
+              <span>Node.js</span><span>Stripe</span><span>TypeScript</span><span>Frontend Development</span>
+            </div>
+            <p class="review-author">Alvaro <span>· Freelancer.com Client</span></p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-project">Incident Reporting Web &amp; Mobile App</p>
+            <p class="review-text">"Abdul has been the technical backbone of this project and I intend to continue working with him. He has been a source of knowledge from the beginning and I could not be more pleased of how it all turned out. I would recommend Abdul for whatever you need, but I plan to keep him busy. Working with Abdul has been a joy. Collaborative and insightful. Would hire him again, no doubt. Abdul is next level. He's handled all that I've asked for and more. Great working with him. A real professional. Above and beyond work. Excellent as usual and always ahead of schedule!"</p>
+            <div class="review-stack">
+              <span>PHP</span><span>JavaScript</span><span>Python</span><span>Mobile App Development</span>
+            </div>
+            <p class="review-author">Michael <span>· Freelancer.com Client</span></p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-project">Custom Airtable Task Flow Automation</p>
+            <p class="review-text">"Abdul was great to work with. At each stage of the project, we were updated with what had been actioned and what the next progress stage was to be."</p>
+            <div class="review-stack">
+              <span>Project Management</span><span>Documentation</span><span>Data Visualization</span><span>Airtable</span>
+            </div>
+            <p class="review-author">Nick <span>· Freelancer.com Client</span></p>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="reviews-controls">
+        <button type="button" class="reviews-nav-btn" id="reviewsPrev" aria-label="Previous review">&larr;</button>
+        <span class="reviews-counter" id="reviewsCounter">1 / 5</span>
+        <button type="button" class="reviews-nav-btn" id="reviewsNext" aria-label="Next review">&rarr;</button>
+      </div>
+
+      <a class="reviews-source-link" href="https://www.freelancer.com/u/mannanmaan1425" target="_blank" rel="noopener">View all 149 reviews on Freelancer.com &rarr;</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
