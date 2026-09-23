@@ -394,27 +394,36 @@
         <p class="tag-label center reveal">Proof, Not Promises</p>
         <h2 class="section-title center reveal">What Clients Say</h2>
 
-        <div class="teaser-grid">
-          <blockquote class="teaser-quote reveal">
-            <div class="review-stars">★★★★★</div>
-            <p>"Abdul did an excellent job on our FEMA IPAWS integration. This was a technically challenging project involving CAP 1.2, digital signatures, WS-Security, X.509 certificates, SOAP/TLS and live FEMA Demo/Staging testing. He stayed with difficult technical issues through successful transmissions and provided complete source code, documentation, evidence and a detailed handoff. I appreciate his persistence, technical ability and continued support. Highly recommended."</p>
-            <cite>Shawn · FEMA IPAWS CAP XML Integration</cite>
-          </blockquote>
-          <blockquote class="teaser-quote reveal">
-            <div class="review-stars">★★★★★</div>
-            <p>"Abdul is one of a kind and makes it happen along with his team.. They are great!! Abdul is the man! His team works smart, hard, and fast. Looking forward to the end result and to move on to the next project!!"</p>
-            <cite>Kenneth · Business Account Integration &amp; Workflow Automation</cite>
-          </blockquote>
-          <blockquote class="teaser-quote reveal">
-            <div class="review-stars">★★★★★</div>
-            <p>"Excellent performance and very fast implementation of the interactive filters. High-quality dashboard interface."</p>
-            <cite>Alvaro · Next.js 15 + Shadcn UI Dashboard</cite>
-          </blockquote>
-          <blockquote class="teaser-quote reveal">
-            <div class="review-stars">★★★★★</div>
-            <p>"Abdul was great to work with. At each stage of the project, we were updated with what had been actioned and what the next progress stage was to be."</p>
-            <cite>Nick · Custom Airtable Task Flow Automation</cite>
-          </blockquote>
+        <div class="teaser-viewport">
+          <div class="teaser-track" id="teaserTrack">
+            <blockquote class="teaser-quote reveal">
+              <div class="review-stars">★★★★★</div>
+              <p>"Abdul did an excellent job on our FEMA IPAWS integration. This was a technically challenging project involving CAP 1.2, digital signatures, WS-Security, X.509 certificates, SOAP/TLS and live FEMA Demo/Staging testing. He stayed with difficult technical issues through successful transmissions and provided complete source code, documentation, evidence and a detailed handoff. I appreciate his persistence, technical ability and continued support. Highly recommended."</p>
+              <cite>Shawn · FEMA IPAWS CAP XML Integration</cite>
+            </blockquote>
+            <blockquote class="teaser-quote reveal">
+              <div class="review-stars">★★★★★</div>
+              <p>"Abdul is one of a kind and makes it happen along with his team.. They are great!! Abdul is the man! His team works smart, hard, and fast. Looking forward to the end result and to move on to the next project!!"</p>
+              <cite>Kenneth · Business Account Integration &amp; Workflow Automation</cite>
+            </blockquote>
+            <blockquote class="teaser-quote reveal">
+              <div class="review-stars">★★★★★</div>
+              <p>"Excellent performance and very fast implementation of the interactive filters. High-quality dashboard interface."</p>
+              <cite>Alvaro · Next.js 15 + Shadcn UI Dashboard</cite>
+            </blockquote>
+            <blockquote class="teaser-quote reveal">
+              <div class="review-stars">★★★★★</div>
+              <p>"Abdul was great to work with. At each stage of the project, we were updated with what had been actioned and what the next progress stage was to be."</p>
+              <cite>Nick · Custom Airtable Task Flow Automation</cite>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="teaser-dots" id="teaserDots">
+          <button type="button" class="teaser-dot active" aria-label="Show review 1"></button>
+          <button type="button" class="teaser-dot" aria-label="Show review 2"></button>
+          <button type="button" class="teaser-dot" aria-label="Show review 3"></button>
+          <button type="button" class="teaser-dot" aria-label="Show review 4"></button>
         </div>
 
         <button type="button" class="btn btn-outline reviews-trigger center-btn reveal" aria-haspopup="dialog" aria-controls="reviewsModal">View All Reviews</button>
@@ -601,37 +610,36 @@
 
         <div class="process-stepper reveal">
           <button type="button" class="process-step" data-step="1">
-            <span class="process-num">01</span>
             <span class="process-label">Understand</span>
             <span class="process-detail">Clarify the real business problem before writing a line of code.</span>
           </button>
+          <span class="process-arrow" aria-hidden="true">&rarr;</span>
           <button type="button" class="process-step" data-step="2">
-            <span class="process-num">02</span>
             <span class="process-label">Architect</span>
             <span class="process-detail">Design the system boundaries, data model, and API contracts.</span>
           </button>
+          <span class="process-arrow" aria-hidden="true">&rarr;</span>
           <button type="button" class="process-step" data-step="3">
-            <span class="process-num">03</span>
             <span class="process-label">Build</span>
             <span class="process-detail">Implement with clean, tested, maintainable code.</span>
           </button>
+          <span class="process-arrow" aria-hidden="true">&rarr;</span>
           <button type="button" class="process-step" data-step="4">
-            <span class="process-num">04</span>
             <span class="process-label">Integrate</span>
             <span class="process-detail">Connect third-party services, APIs, and automation tools.</span>
           </button>
+          <span class="process-arrow" aria-hidden="true">&rarr;</span>
           <button type="button" class="process-step" data-step="5">
-            <span class="process-num">05</span>
             <span class="process-label">Test</span>
             <span class="process-detail">Validate against real-world edge cases before launch.</span>
           </button>
+          <span class="process-arrow" aria-hidden="true">&rarr;</span>
           <button type="button" class="process-step" data-step="6">
-            <span class="process-num">06</span>
             <span class="process-label">Deliver</span>
             <span class="process-detail">Ship with complete documentation and a clean handoff.</span>
           </button>
+          <span class="process-arrow" aria-hidden="true">&rarr;</span>
           <button type="button" class="process-step" data-step="7">
-            <span class="process-num">07</span>
             <span class="process-label">Support</span>
             <span class="process-detail">Stay engaged post-launch. Many clients return for the next phase.</span>
           </button>
@@ -1469,6 +1477,534 @@
               </div>
               <div class="project-link-row">
                 <button type="button" class="project-link case-study-trigger" data-case="medranolandscaping">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="automation">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">25 · MySQL Optimization</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/mysql-optimization/overview.png" alt="MySQL 8.4 data optimization diagram: stored procedures, schema optimization, performance tuning, Python scripting, and automated Excel report export" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Database</span>
+              </div>
+              <h3>MySQL 8.4 Data Optimization</h3>
+              <p>Optimized a MySQL 8.4 database with stored programs and views for statistical reporting, with a Python script that exports results to Excel.</p>
+              <div class="project-stack">
+                <span>Python 3</span><span>MySQL 8.4</span><span>Excel</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="mysqloptimization">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">26 · AI Business Automation</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/ai-business-automation/landing-page.png" alt="Consultancy landing page design with deep-purple/indigo gradients, the tagline &quot;Where AI Meets Business Operations,&quot; and collaborative workspace imagery, shown at desktop and mobile widths" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">UI/UX</span>
+              </div>
+              <h3>AI Driven Business Automation Design</h3>
+              <p>A high-conversion consultancy landing page with deep-purple/indigo gradients, built around the brand message "Where AI Meets Business Operations."</p>
+              <div class="project-stack">
+                <span>Brand UI</span><span>Landing Page</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="aibusinessautomation">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="ai">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">27 · Abusive Tweets Detector</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/abusive-tweets-detector/wordcloud-analysis.png" alt="Word cloud visualization of frequent words in a tweet category, generated during text preprocessing and analysis" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Machine Learning</span>
+              </div>
+              <h3>Abusive Tweets Detector AI ML Model</h3>
+              <p>A machine learning model to detect abusive or offensive tweets using labeled text data, preprocessing, feature extraction, and model comparison.</p>
+              <div class="project-stack">
+                <span>Python</span><span>Scikit-learn</span><span>NumPy</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="abusivetweetsdetector">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">28 · Payment & Seat Booking</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/payment-seat-booking/reservations.png" alt="Club 809 section reservations page with a date picker and a numbered table floor plan showing the DJ booth, bar, and entrance" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Web App</span>
+              </div>
+              <h3>Implement Payment and Seat Booking</h3>
+              <p>Club table reservations with advance payments using a Stripe and WordPress plugin setup, supporting advance booking for 18 tables.</p>
+              <div class="project-stack">
+                <span>WordPress</span><span>Stripe</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="paymentseatbooking">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">29 · Maquinatrix</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/maquinatrix/homepage.png" alt="Maquinatrix homepage with rent/buy search for heavy machinery and equipment" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Marketplace</span>
+              </div>
+              <h3>Maquinatrix</h3>
+              <p>An "Airbnb of Machines" marketplace for heavy machinery rentals, with direct renter/buyer communication, secure payments, and machinery insurance.</p>
+              <div class="project-stack">
+                <span>Python</span><span>React.js</span><span>Django</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="maquinatrix">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="automation">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">30 · Excel Macro Optimization</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/excel-macro-optimization/overview.png" alt="Excel macro data analysis optimization diagram: data ingestion, Python/VBA macros, automated pipelines, charts, and report output" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Automation</span>
+              </div>
+              <h3>SpeedUp Excel Macro Data Analysis</h3>
+              <p>Optimized Excel workflows involving hundreds of thousands of cells, automating repeated runs, imports/exports, and expanded variables.</p>
+              <div class="project-stack">
+                <span>Python</span><span>SQL</span><span>Excel</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="excelmacrooptimization">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">31 · Boutique UI (Pink Chicken)</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/boutique-ui/brand-story.png" alt="Pink Chicken UI/UX redesign with fluid layouts, soft curves, overlapping imagery, and white space, including &quot;The Pink Chicken Way&quot; and &quot;Pink Chicken: Then and Now&quot; pages" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">UI/UX</span>
+              </div>
+              <h3>Boutique UI &amp; Brand Story (Pink Chicken)</h3>
+              <p>UI/UX redesign and visual storytelling with fluid layouts, soft curves, overlapping imagery, and white space.</p>
+              <div class="project-stack">
+                <span>HTML5</span><span>Website Design</span><span>eCommerce</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="boutiqueui">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="saas">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">32 · Eduperse</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/eduperse/admin-dashboard.png" alt="Eduperse admin dashboard with student, course, and group metrics and enrollment charts" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">LMS</span>
+              </div>
+              <h3>Eduperse</h3>
+              <p>An Ecuador-based LMS with student, instructor, and admin logins, course enrollment, instructor evaluations, grading, and real-time chat.</p>
+              <div class="project-stack">
+                <span>Python</span><span>React.js</span><span>Django</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="eduperse">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="saas">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">33 · Security Admin Portal</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/security-admin-portal/dashboard.png" alt="Mas Seguros admin dashboard with user, membership, shield, and alert metrics" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Security</span>
+              </div>
+              <h3>A Security App Admin Portal (Mas Seguros)</h3>
+              <p>Security management admin panel with user roles/permissions, real-time camera/access/sensor monitoring, and incident alert tracking.</p>
+              <div class="project-stack">
+                <span>Python</span><span>Django</span><span>React.js</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="securityadminportal">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="saas">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">34 · Chat System HRMS</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/chat-system-hrms/inbox.png" alt="HRMS platform chat inbox with a list of conversations" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HRMS</span>
+              </div>
+              <h3>Chat System HRMS</h3>
+              <p>Real-time chat system integrated into an HRMS platform.</p>
+              <div class="project-stack">
+                <span>React.js</span><span>Django</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="chatsystemhrms">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="ai">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">35 · Healthcare Workflow</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/healthcare-workflow/overview.png" alt="AI-powered healthcare workflow diagram: patient data ingestion, data analysis, AI agent collaboration, treatment, and personalized treatment plans" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">AI</span>
+              </div>
+              <h3>AI-Powered Healthcare Workflow Optimization</h3>
+              <p>Healthcare workflow solution with patient-data ingestion and analysis, AI-agent collaboration, diagnosis support, and personalized treatment planning.</p>
+              <div class="project-stack">
+                <span>Python</span><span>AI Agents</span><span>TensorFlow</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="healthcareworkflow">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">36 · Shopify Landing Revamp</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/shopify-landing-revamp/homepage.png" alt="Revamped Shopify landing page for a skincare brand with a polished newsletter signup section and product grid" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Shopify</span>
+              </div>
+              <h3>Shopify Landing Page Revamp</h3>
+              <p>Revamped a Shopify landing page based on the client's instructions, focusing on polished graphics and an improved, professional UI.</p>
+              <div class="project-stack">
+                <span>Shopify</span><span>Website Design</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="shopifylandingrevamp">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="ai">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">37 · Shopper Intention System</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/shopper-intention-system/correlation-analysis.png" alt="Correlation heatmap of online shopper behavior features used to train the shopper intention prediction model" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Machine Learning</span>
+              </div>
+              <h3>Online Shopper Intention System</h3>
+              <p>An AI/ML model to detect online shopper intentions, trained to achieve high accuracy in predicting shopper behavior.</p>
+              <div class="project-stack">
+                <span>Python</span><span>Scikit-learn</span><span>NumPy</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="shopperintentionsystem">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="automation">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">38 · Amazon Excel Processor</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/amazon-excel-processor/upload-file.png" alt="Amazon Excel File Processor upload page with filter options, column calculation, and delete columns tools over an uploaded dataset" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Automation</span>
+              </div>
+              <h3>Amazon Excel File Processor</h3>
+              <p>A tool to process Excel files exported from AWS, supporting data filtering, formula processing, data analysis, and exporting updated files.</p>
+              <div class="project-stack">
+                <span>Python</span><span>React.js</span><span>Django</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="amazonexcelprocessor">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">39 · Alertsio.com</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/alertsio/homepage.png" alt="Alertsio homepage: &quot;Transform your ideas to great products &amp; services&quot;" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Consulting</span>
+              </div>
+              <h3>Alertsio.com</h3>
+              <p>Company website for Alertsio, an IT, communications, and business consulting company providing enterprise solutions across CRM, BI, and infrastructure.</p>
+              <div class="project-stack">
+                <span>WordPress</span><span>Django</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="alertsio">
+                  View Case Study
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="mobile">
+            <div class="project-visual">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                <span class="mockup-label">40 · WalletPilot</span>
+              </div>
+              <div class="project-thumb project-thumb-screenshot">
+                <img src="projects/walletpilot/app-screens.png" alt="WalletPilot app screens: total balance dashboard, expense breakdown and spending charts, and savings goals, in a glassmorphism style" loading="lazy">
+                <div class="thumb-overlay">
+                  <span>Open Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Mobile App</span>
+              </div>
+              <h3>WalletPilot</h3>
+              <p>A personal finance mobile app for tracking expenses, managing budgets, and achieving savings goals with a glassmorphism interface.</p>
+              <div class="project-stack">
+                <span>Python</span><span>Flutter</span>
+              </div>
+              <div class="project-link-row">
+                <button type="button" class="project-link case-study-trigger" data-case="walletpilot">
                   View Case Study
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
                 </button>

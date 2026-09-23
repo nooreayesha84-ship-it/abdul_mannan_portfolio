@@ -262,6 +262,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Home reviews teaser: auto-sliding carousel ---------- */
+  const teaserTrack = document.getElementById('teaserTrack');
+  if (teaserTrack) {
+    const teaserViewport = teaserTrack.parentElement;
+    const teaserSlideCount = teaserTrack.children.length;
+    const teaserDots = Array.from(document.querySelectorAll('#teaserDots .teaser-dot'));
+    let teaserIndex = 0;
+    let teaserTimer = null;
+
+    function showTeaserSlide(index) {
+      teaserIndex = (index + teaserSlideCount) % teaserSlideCount;
+      teaserTrack.style.transform = `translateX(-${teaserIndex * 100}%)`;
+      teaserDots.forEach((dot, i) => dot.classList.toggle('active', i === teaserIndex));
+    }
+
+    function startTeaserAutoSlide() {
+      clearInterval(teaserTimer);
+      teaserTimer = setInterval(() => showTeaserSlide(teaserIndex + 1), 2000);
+    }
+
+    function stopTeaserAutoSlide() {
+      clearInterval(teaserTimer);
+    }
+
+    let teaserPausedByClick = false;
+
+    teaserViewport.addEventListener('click', () => {
+      teaserPausedByClick = true;
+      stopTeaserAutoSlide();
+    });
+
+    teaserDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        teaserPausedByClick = true;
+        stopTeaserAutoSlide();
+        showTeaserSlide(i);
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (teaserPausedByClick) {
+        teaserPausedByClick = false;
+        startTeaserAutoSlide();
+      }
+    });
+
+    startTeaserAutoSlide();
+  }
+
   /* ---------- Reviews modal ---------- */
   const reviewsTriggers = document.querySelectorAll('.reviews-trigger');
   const reviewsModal = document.getElementById('reviewsModal');
@@ -747,6 +796,323 @@ document.addEventListener('DOMContentLoaded', () => {
         { h: 'Outcome', p: 'Delivered a job management and career portal for Medrano Landscaping Inc. with applicant authentication, job listings, and application management.' }
       ]
     },
+    mysqloptimization: {
+      title: 'MySQL 8.4 Data Optimization',
+      sub: 'Database Optimization · Automated Reporting',
+      images: [
+        { src: 'projects/mysql-optimization/overview.png', alt: 'MySQL 8.4 data optimization diagram: stored procedures, schema optimization, performance tuning, Python scripting, and automated Excel report export' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Statistical reporting needed data aggregated from multiple tables in a MySQL 8.4 database, exported to Excel in a required format, without a repeatable, tested process.' },
+        { h: 'The Solution', p: 'Optimized a MySQL 8.4 database using stored programs and views to aggregate data from multiple tables for statistical reporting. A Python 3 script retrieves the view and exports results to Excel in the required format, with testing, documentation, sample reports, and handover.' },
+        { h: 'Key Features', list: [
+          'Multi-table aggregation',
+          'Statistical reporting',
+          'Automated Excel export',
+          'Tested workflow'
+        ] },
+        { h: 'Technologies', tech: ['Python 3', 'MySQL 8.4', 'Excel'] },
+        { h: 'Outcome', p: 'Delivered an optimized MySQL 8.4 database with automated, tested Excel reporting, documentation, and sample reports.' }
+      ]
+    },
+    aibusinessautomation: {
+      title: 'AI Driven Business Automation Design',
+      sub: 'Consultancy Landing Page · Brand & UI Design',
+      images: [
+        { src: 'projects/ai-business-automation/landing-page.png', alt: 'Consultancy landing page design with deep-purple/indigo gradients, the tagline "Where AI Meets Business Operations," and collaborative workspace imagery, shown at desktop and mobile widths' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'IndexWorld needed a high-conversion consultancy landing page and responsive interface that clearly communicated its AI-driven business automation brand.' },
+        { h: 'The Solution', p: 'Designed a consultancy landing page and responsive interface for IndexWorld, featuring a high-conversion design, deep-purple/indigo gradients, whitespace, collaborative workspace imagery, and readable typography, built around the brand message "Where AI Meets Business Operations."' },
+        { h: 'Key Features', list: [
+          'Responsive landing page',
+          'Brand-focused UI',
+          'Gradient design',
+          'Collaborative workspace visuals'
+        ] },
+        { h: 'Technologies', tech: ['Automation', 'Odoo', 'QuickBooks'] },
+        { h: 'Outcome', p: 'Delivered a responsive, high-conversion consultancy landing page built around the "Where AI Meets Business Operations" brand message.' }
+      ]
+    },
+    abusivetweetsdetector: {
+      title: 'Abusive Tweets Detector AI ML Model',
+      sub: 'Machine Learning · Text Classification',
+      images: [
+        { src: 'projects/abusive-tweets-detector/wordcloud-analysis.png', alt: 'Word cloud visualization of frequent words in a tweet category, generated during text preprocessing and analysis' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Detecting abusive or offensive tweets at scale requires a trained classification model rather than manual review of text data.' },
+        { h: 'The Solution', p: 'Developed a machine learning model to detect abusive or offensive tweets using labeled text data, preprocessing, feature extraction, and model comparison.' },
+        { h: 'Key Features', list: [
+          'Text preprocessing',
+          'Feature extraction',
+          'Classification',
+          'Model comparison'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'Scikit-learn', 'NumPy'] },
+        { h: 'Outcome', p: 'Delivered a trained classification model, with preprocessing and feature extraction, for detecting abusive or offensive tweets.' }
+      ]
+    },
+    paymentseatbooking: {
+      title: 'Implement Payment and Seat Booking',
+      sub: 'Table Reservations · Advance Payments',
+      images: [
+        { src: 'projects/payment-seat-booking/reservations.png', alt: 'Club 809 section reservations page with a date picker and a numbered table floor plan showing the DJ booth, bar, and entrance' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Club table reservations needed to support advance payment at the time of booking rather than payment handled separately at the venue.' },
+        { h: 'The Solution', p: 'Implemented club table reservations with advance payments using a Stripe and WordPress plugin setup. The system supports advance booking for 18 tables.' },
+        { h: 'Key Features', list: [
+          'Table reservations',
+          'Advance payments',
+          '18 reservable tables'
+        ] },
+        { h: 'Technologies', tech: ['WordPress', 'Stripe'] },
+        { h: 'Outcome', p: 'Delivered a table reservation system supporting advance payment for 18 tables via Stripe on WordPress.' }
+      ]
+    },
+    maquinatrix: {
+      title: 'Maquinatrix',
+      sub: 'Heavy Machinery Rental Marketplace',
+      images: [
+        { src: 'projects/maquinatrix/homepage.png', alt: 'Maquinatrix homepage with rent/buy search for heavy machinery and equipment' },
+        { src: 'projects/maquinatrix/listings.png', alt: 'Maquinatrix search results listing rental machinery with price, location, and brand' },
+        { src: 'projects/maquinatrix/listing-detail.png', alt: 'Maquinatrix machinery listing detail page with pricing, location, and a contact/inquiry form' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Renting or buying heavy machinery typically involves scattered listings with no direct way for renters and machinery owners to communicate, pay, and insure equipment in one place.' },
+        { h: 'The Solution', p: 'Developed an "Airbnb of Machines" marketplace for heavy machinery rentals, enabling direct communication between renters and buyers, secure payments, and machinery insurance.' },
+        { h: 'Key Features', list: [
+          'Machinery rental marketplace',
+          'Direct communication between renters and buyers',
+          'Secure payments',
+          'Machinery insurance'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'React.js', 'Django'] },
+        { h: 'Outcome', p: 'Delivered a heavy machinery rental marketplace connecting renters and machinery owners with direct communication, secure payments, and insurance.' }
+      ]
+    },
+    excelmacrooptimization: {
+      title: 'SpeedUp Excel Macro Data Analysis',
+      sub: 'Excel Automation · Data Optimization',
+      images: [
+        { src: 'projects/excel-macro-optimization/overview.png', alt: 'Excel macro data analysis optimization diagram: data ingestion, Python/VBA macros, automated pipelines, charts, and report output' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Excel workflows involving hundreds of thousands of cells took hours to process, with repeated runs, imports/exports, and expanded variables handled manually.' },
+        { h: 'The Solution', p: 'Optimized Excel workflows involving hundreds of thousands of cells, automating repeated runs, imports/exports, and expanded variables.' },
+        { h: 'Key Features', list: [
+          'Optimized Excel workflows for hundreds of thousands of cells',
+          'Automated repeated runs',
+          'Automated imports/exports',
+          'Expanded variables'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'SQL', 'Excel', 'Database Programming'] },
+        { h: 'Outcome', p: 'Reduced processing time from hours to minutes.' }
+      ]
+    },
+    boutiqueui: {
+      title: 'Boutique UI & Brand Story (Pink Chicken)',
+      sub: 'UI/UX Redesign · Visual Storytelling',
+      images: [
+        { src: 'projects/boutique-ui/brand-story.png', alt: 'Pink Chicken UI/UX redesign with fluid layouts, soft curves, overlapping imagery, and white space, including "The Pink Chicken Way" and "Pink Chicken: Then and Now" pages' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Pink Chicken needed a UI/UX redesign and visual storytelling that reflected its brand.' },
+        { h: 'The Solution', p: 'UI/UX redesign and visual storytelling for Pink Chicken with fluid layouts, soft curves, overlapping imagery, and white space, including "The Pink Chicken Way" and "Pink Chicken: Then and Now."' },
+        { h: 'Key Features', list: [
+          'Fluid layouts',
+          'Soft curves',
+          'Overlapping imagery',
+          'White space',
+          '"The Pink Chicken Way" brand story',
+          '"Pink Chicken: Then and Now" brand story'
+        ] },
+        { h: 'Technologies', tech: ['HTML5', 'Website Design', 'eCommerce'] },
+        { h: 'Outcome', p: 'Delivered a redesigned UI and brand storytelling experience for Pink Chicken.' }
+      ]
+    },
+    eduperse: {
+      title: 'Eduperse',
+      sub: 'Learning Management System · Ecuador',
+      images: [
+        { src: 'projects/eduperse/admin-dashboard.png', alt: 'Eduperse admin dashboard with student, course, and group metrics and enrollment charts' },
+        { src: 'projects/eduperse/user-management.png', alt: 'Eduperse user management page listing students and instructors with account status' },
+        { src: 'projects/eduperse/messages-chat.png', alt: 'Eduperse real-time chat between admin and students' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Ecuador-based educational programs needed a learning management system supporting students, instructors, and admins in one platform.' },
+        { h: 'The Solution', p: 'An Ecuador-based LMS with student, instructor, and admin logins, course enrollment, instructor evaluations, grading, and real-time chat.' },
+        { h: 'Key Features', list: [
+          'Student, instructor, and admin logins',
+          'Course enrollment',
+          'Instructor evaluations',
+          'Grading',
+          'Real-time chat'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'React.js', 'Django', 'Software Testing', 'Machine Learning'] },
+        { h: 'Outcome', p: 'Delivered an Ecuador-based LMS supporting students, instructors, and admins with enrollment, evaluations, grading, and real-time chat.' }
+      ]
+    },
+    securityadminportal: {
+      title: 'A Security App Admin Portal (Mas Seguros)',
+      sub: 'Security Management · Admin Panel',
+      images: [
+        { src: 'projects/security-admin-portal/dashboard.png', alt: 'Mas Seguros admin dashboard with user, membership, shield, and alert metrics' },
+        { src: 'projects/security-admin-portal/user-tracking.png', alt: 'Mas Seguros user profile with real-time location tracking on a map' },
+        { src: 'projects/security-admin-portal/group-chat.png', alt: 'Mas Seguros group chat with real-time messages and a police alert' },
+        { src: 'projects/security-admin-portal/biometric-log.png', alt: 'Mas Seguros biometric entry/exit log with timestamps and locations' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Mas Seguros needed a security management admin panel to manage personnel and monitor cameras, access, and sensors in real time.' },
+        { h: 'The Solution', p: 'A security management admin panel for Mas Seguros with user roles/permissions, personnel onboarding and verification, real-time camera/access/sensor monitoring, incident alerts, assignment, and resolution tracking.' },
+        { h: 'Key Features', list: [
+          'User roles and permissions',
+          'Personnel onboarding and verification',
+          'Real-time camera, access, and sensor monitoring',
+          'Incident alerts',
+          'Incident assignment and resolution tracking'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'Django', 'React.js', 'API Development'] },
+        { h: 'Outcome', p: 'Delivered a security management admin panel for Mas Seguros with real-time monitoring, incident alerts, and resolution tracking.' }
+      ]
+    },
+    chatsystemhrms: {
+      title: 'Chat System HRMS',
+      sub: 'Real-Time Chat · HRMS Integration',
+      images: [
+        { src: 'projects/chat-system-hrms/clients.png', alt: 'HRMS platform client management page with active accounts and inbox access' },
+        { src: 'projects/chat-system-hrms/inbox.png', alt: 'HRMS platform chat inbox with a list of conversations' },
+        { src: 'projects/chat-system-hrms/chat-conversation.png', alt: 'HRMS platform real-time chat conversation with file attachments' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'HRMS users needed real-time chat built into the platform instead of relying on a separate messaging tool.' },
+        { h: 'The Solution', p: 'A real-time chat system integrated into an HRMS platform.' },
+        { h: 'Key Features', list: [
+          'Real-time chat integrated into an HRMS platform'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'React.js', 'JavaScript', 'HTML5', 'Django'] },
+        { h: 'Outcome', p: 'Delivered a real-time chat system integrated into an HRMS platform.' }
+      ]
+    },
+    healthcareworkflow: {
+      title: 'AI-Powered Healthcare Workflow Optimization',
+      sub: 'Healthcare AI · Diagnosis & Treatment Support',
+      images: [
+        { src: 'projects/healthcare-workflow/overview.png', alt: 'AI-powered healthcare workflow diagram: patient data ingestion, data analysis, AI agent collaboration, treatment, and personalized treatment plans' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Healthcare teams needed a way to combine patient-data analysis with AI-agent collaboration to support diagnosis and treatment planning.' },
+        { h: 'The Solution', p: 'A healthcare workflow solution involving patient-data ingestion and analysis, AI-agent collaboration with medical professionals, diagnosis support, and personalized treatment planning.' },
+        { h: 'Key Features', list: [
+          'Patient-data ingestion and analysis',
+          'AI-agent collaboration with medical professionals',
+          'Diagnosis support',
+          'Personalized treatment planning'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'AI Agents', 'Scikit-learn', 'TensorFlow'] },
+        { h: 'Outcome', p: 'Delivered a healthcare workflow solution combining patient-data analysis, AI-agent collaboration, diagnosis support, and personalized treatment planning.' }
+      ]
+    },
+    shopifylandingrevamp: {
+      title: 'Shopify Landing Page Revamp',
+      sub: 'Shopify · Landing Page Design',
+      images: [
+        { src: 'projects/shopify-landing-revamp/homepage.png', alt: 'Revamped Shopify landing page for a skincare brand with a polished newsletter signup section and product grid' }
+      ],
+      sections: [
+        { h: 'The Problem', p: "The client's existing Shopify landing page needed polished graphics and a more professional UI." },
+        { h: 'The Solution', p: "Revamped a Shopify landing page based on the client's instructions, focusing on polished graphics and an improved, professional UI." },
+        { h: 'Key Features', list: [
+          'Shopify landing page revamp',
+          'Polished graphics',
+          'Improved, professional UI'
+        ] },
+        { h: 'Technologies', tech: ['Shopify', 'Website Design', 'Landing Pages'] },
+        { h: 'Outcome', p: 'Delivered a revamped Shopify landing page with polished graphics and an improved, professional UI.' }
+      ]
+    },
+    shopperintentionsystem: {
+      title: 'Online Shopper Intention System',
+      sub: 'Machine Learning · Shopper Behavior Prediction',
+      images: [
+        { src: 'projects/shopper-intention-system/correlation-analysis.png', alt: 'Correlation heatmap of online shopper behavior features used to train the shopper intention prediction model' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Predicting online shopper behavior and intent required a trained model rather than manual analysis of browsing data.' },
+        { h: 'The Solution', p: 'Developed an AI/ML model to detect online shopper intentions using a dataset from an authenticated website. The model was trained to achieve high accuracy in predicting shopper behavior.' },
+        { h: 'Key Features', list: [
+          'Online shopper intention detection',
+          'Trained on a dataset from an authenticated website',
+          'High-accuracy shopper behavior prediction'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'Machine Learning (ML)', 'Scikit-learn', 'NumPy'] },
+        { h: 'Outcome', p: 'Delivered a trained AI/ML model that predicts online shopper intentions with high accuracy.' }
+      ]
+    },
+    amazonexcelprocessor: {
+      title: 'Amazon Excel File Processor',
+      sub: 'Excel Automation · AWS Data Processing',
+      images: [
+        { src: 'projects/amazon-excel-processor/upload-file.png', alt: 'Amazon Excel File Processor upload page with filter options, column calculation, and delete columns tools over an uploaded dataset' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Processing large Excel files exported from AWS with filtering, formulas, and analysis by hand was inefficient.' },
+        { h: 'The Solution', p: 'Built a tool to process Excel files exported from AWS. It supports data filtering, formula processing, data analysis, and exporting updated files.' },
+        { h: 'Key Features', list: [
+          'Processes Excel files exported from AWS',
+          'Data filtering',
+          'Formula processing',
+          'Data analysis',
+          'Exporting updated files'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'React.js', 'JavaScript', 'HTML5', 'Django'] },
+        { h: 'Outcome', p: 'Delivered a tool that improves efficiency when filtering, processing, analyzing, and exporting large Excel datasets from AWS.' }
+      ]
+    },
+    alertsio: {
+      title: 'Alertsio.com',
+      sub: 'IT & Business Consulting · Company Website',
+      images: [
+        { src: 'projects/alertsio/homepage.png', alt: 'Alertsio homepage: "Transform your ideas to great products & services"' },
+        { src: 'projects/alertsio/services.png', alt: 'Alertsio services page listing Mobile Apps, Web Development, Graphic Design, and SEO' },
+        { src: 'projects/alertsio/portfolio.png', alt: 'Alertsio portfolio page: "Empowering our clients to succeed with technologies"' },
+        { src: 'projects/alertsio/mobile-apps-service.png', alt: 'Alertsio mobile app development service page with app examples and compliance badges' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Alertsio needed a company website presenting its IT, communications, and business consulting services.' },
+        { h: 'The Solution', p: 'A company website for Alertsio, an IT, communications, and business consulting company providing enterprise solutions across CRM, business intelligence, engineering, operations, and infrastructure services.' },
+        { h: 'Key Features', list: [
+          'Mobile app development (iOS, Android, cross-platform)',
+          'Web development (responsive, WordPress, e-commerce, custom, PHP)',
+          'Graphic design and branding',
+          'SEO services',
+          'Portfolio and client success stories'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'WordPress', 'Web Development', 'Django'] },
+        { h: 'Outcome', p: 'Delivered a company website for Alertsio presenting its IT, communications, and business consulting services.' }
+      ]
+    },
+    walletpilot: {
+      title: 'WalletPilot',
+      sub: 'Personal Finance App · Glassmorphism UI',
+      images: [
+        { src: 'projects/walletpilot/app-screens.png', alt: 'WalletPilot app screens: total balance dashboard, expense breakdown and spending charts, and savings goals, in a glassmorphism style' },
+        { src: 'projects/walletpilot/settings-screen.png', alt: 'WalletPilot settings screen with account preferences, security (2FA, biometrics), notifications, and data privacy, in a glassmorphism style' }
+      ],
+      sections: [
+        { h: 'The Problem', p: 'Managing personal expenses, budgets, and savings goals in one place required a modern, easy-to-use mobile app.' },
+        { h: 'The Solution', p: 'A sleek, modern personal finance mobile app for tracking expenses, managing budgets, and achieving savings goals. The interface uses a glassmorphism design, featuring semi-transparent elements and a frosted-glass visual style.' },
+        { h: 'Key Features', list: [
+          'Expense tracking',
+          'Budget management',
+          'Savings goals',
+          'Glassmorphism UI with semi-transparent, frosted-glass elements'
+        ] },
+        { h: 'Technologies', tech: ['Python', 'Flutter', 'Adobe Illustrator', 'Adobe Photoshop'] },
+        { h: 'Outcome', p: 'Delivered a personal finance mobile app for tracking expenses, managing budgets, and reaching savings goals with a glassmorphism interface.' }
+      ]
+    },
     nextgengtn: {
       title: 'NextGen GTN™',
       sub: 'Educational Platform · Commercialization Intelligence',
@@ -775,7 +1141,11 @@ document.addEventListener('DOMContentLoaded', () => {
       sub: 'Audio Streaming · Sleep & Relaxation',
       images: [
         { src: 'projects/scofa-relax/thumbnail.jpg', alt: 'Scofa Relax app logo: sleep and relaxation platform' },
-        { src: 'projects/scofa-relax/live-app.png', alt: 'Scofa Relax live site: Sounds & Music, Relaxation, Stories, and Articles' }
+        { src: 'projects/scofa-relax/live-app.png', alt: 'Scofa Relax live site: Sounds & Music, Relaxation, Stories, and Articles' },
+        { src: 'projects/scofa-relax/sounds-music.png', alt: 'Scofa Relax Sounds & Music library with Featured, Lullaby, Music, ASMR, Noise, Space, and Wild Life categories' },
+        { src: 'projects/scofa-relax/account-settings.png', alt: 'Scofa Relax account settings page with Account Details, My Mixes, and More Options' },
+        { src: 'projects/scofa-relax/faq.png', alt: 'Scofa Relax frequently asked questions page' },
+        { src: 'projects/scofa-relax/edit-profile.png', alt: 'Scofa Relax edit profile page with name, email, country, and birthdate fields' }
       ],
       sections: [
         { h: 'The Problem', p: 'People looking for better sleep and relaxation often need different types of calming content, such as sounds, music, meditation, and stories, rather than relying on a single type of audio experience.' },
